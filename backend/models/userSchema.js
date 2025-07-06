@@ -8,6 +8,9 @@ const userSchema = Schema({
         minLength: [3, "username should be >= 3"],
         maxLength: [20, "username should be <= 20"]
     },
+    image: {
+        type: String
+    },
     password: {
         type: String,
         minLength: [8, "password length must be >= 8"],

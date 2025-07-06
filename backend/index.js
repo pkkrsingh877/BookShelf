@@ -10,6 +10,23 @@ const __dirname = path.dirname(__filename);
 
 import 'dotenv/config';
 
+// Route Files
+import adminRoutes from './routes/adminRoutes.js';
+import bookRoutes from './routes/bookRoutes.js';
+import moderatorRoutes from './routes/moderatorRoutes.js';
+import authorRoutes from './routes/authorRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
+
+// Routes
+app.use('/api/user', userRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/moderator', moderatorRoutes);
+app.use('/api/author', authorRoutes);
+app.use('/api/review', reviewRoutes);
+app.use('/api/book', bookRoutes);
+
+
 // Serve the built React app from /frontend/dist
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 

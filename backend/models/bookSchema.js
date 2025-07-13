@@ -5,6 +5,10 @@ const bookSchema = new Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        required: true
+    },
     image: {
         type: String,
         required: true
@@ -23,7 +27,11 @@ const bookSchema = new Schema({
     reviews: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review'
-    }]
+    }],
+    addedBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
 }, { timestamps: true});
 
 const Book = mongoose.model('Book', bookSchema);
